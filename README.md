@@ -218,6 +218,28 @@ When enabled:
 - Supabase SSR
 - React Hook Form + Zod
 
+## Deployment
+
+This application is configured for deployment on:
+- **Backend**: Railway ([railway.app](https://railway.app))
+- **Frontend**: Vercel ([vercel.com](https://vercel.com))
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
+
+### Quick Deploy
+
+**Railway (Backend):**
+1. Connect your GitHub repository
+2. Set root directory to `backend/`
+3. Add environment variables (see DEPLOYMENT.md)
+4. Deploy
+
+**Vercel (Frontend):**
+1. Import your GitHub repository
+2. Set root directory to `frontend/`
+3. Add environment variables (see DEPLOYMENT.md)
+4. Deploy
+
 ## License
 
 MIT
