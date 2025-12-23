@@ -83,8 +83,8 @@ export class GoogleCalendarService {
 
     return {
       events: data.items || [],
-      nextPageToken: data.nextPageToken,
-      nextSyncToken: data.nextSyncToken,
+      nextPageToken: data.nextPageToken || undefined,
+      nextSyncToken: data.nextSyncToken || undefined,
     };
   }
 

@@ -12,7 +12,7 @@ declare module 'fastify' {
 }
 
 const authPlugin: FastifyPluginAsync = async (fastify) => {
-  fastify.decorateRequest('user', null);
+  fastify.decorateRequest('user', undefined);
 
   fastify.addHook('preHandler', async (request, reply) => {
     const publicRoutes = ['/auth/google', '/webhooks/google', '/health'];
