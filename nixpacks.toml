@@ -1,0 +1,20 @@
+# Nixpacks configuration for Railway
+# This file should be in the root directory
+# Railway will use this when building from root
+
+[phases.setup]
+nixPkgs = ["nodejs_20", "pnpm"]
+
+[phases.install]
+cmds = [
+  "cd backend && pnpm install --frozen-lockfile"
+]
+
+[phases.build]
+cmds = [
+  "cd backend && pnpm build"
+]
+
+[start]
+cmd = "cd backend && pnpm start"
+

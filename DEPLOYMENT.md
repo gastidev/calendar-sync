@@ -22,7 +22,8 @@ This guide covers deploying the Calendar Sync application to Railway (API) and V
 If using GitHub:
 1. Select your repository
 2. Railway will detect the project structure
-3. Set the root directory to `backend/`
+3. **Important**: Keep the root directory as the repository root (don't set it to `backend/`)
+4. Railway will use the root-level `nixpacks.toml` for build configuration
 
 ### 3. Configure Environment Variables
 
@@ -49,11 +50,16 @@ WEBHOOK_BASE_URL=https://your-railway-app.railway.app
 
 ### 4. Configure Build Settings
 
-Railway should auto-detect the build settings from `railway.json` and `nixpacks.toml`. If not:
+Railway will automatically use the root-level `nixpacks.toml` file which handles:
+- Installing dependencies in the `backend/` directory
+- Building the TypeScript project
+- Starting the server
 
-- **Build Command**: `cd backend && pnpm install && pnpm build`
-- **Start Command**: `cd backend && pnpm start`
-- **Root Directory**: `backend/`
+**No manual configuration needed** - the `nixpacks.toml` in the root directory handles everything.
+
+If you need to override, you can set:
+- **Root Directory**: Leave as repository root (not `backend/`)
+- Railway will use the commands from `nixpacks.toml`
 
 ### 5. Deploy
 
